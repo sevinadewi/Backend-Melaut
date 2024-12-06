@@ -31,10 +31,18 @@ const __dirname = path.dirname(__filename);
 // }catch (error) {
 //     console.error(error);
 // }
+app.get("/", (req, res) => {
+  res.send("Berhasil deploy ke Cloud Run!");
+});
+
+
+
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.url}`);
     next();
   });
+
+
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 app.use(cookieParser());
 app.use(express.json());
