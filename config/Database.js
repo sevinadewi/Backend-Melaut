@@ -45,7 +45,7 @@ const db = new Sequelize(
 );
 
 // Uji koneksi
-async function testConnection() {
+export async function testConnection() {
     try {
         await db.authenticate();
         console.log('Connection to the database has been established successfully.');
@@ -54,6 +54,5 @@ async function testConnection() {
     }
 }
 
-testConnection();
 
 export default db;
