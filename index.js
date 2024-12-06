@@ -15,6 +15,9 @@ import postRoutes from "./routes/PostsRoutes.js";
 import homeRoutes from "./routes/homeRoutes.js";
 import weatherRoutes from "./routes/weather.js";
 import ResultRoutes from "./routes/ResultRoutes.js";
+import { testConnection } from './config/Database.js';
+
+testConnection();
 
 
 
