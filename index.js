@@ -31,6 +31,11 @@ const __dirname = path.dirname(__filename);
 // }catch (error) {
 //     console.error(error);
 // }
+
+app.get("/", (req, res) => {
+  res.send("Berhasil deploy! Aplikasi Anda berjalan dengan baik.");
+});
+
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.url}`);
     next();
