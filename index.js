@@ -36,6 +36,10 @@ app.use((req, res, next) => {
     next();
   });
 
+  app.get("/", (req, res) => {
+    res.send("Berhasil deploy ke Cloud Run!");
+  });
+
 
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 app.use(cookieParser());
