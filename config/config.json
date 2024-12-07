@@ -3,21 +3,21 @@
       "username": "root",
       "password": "",
       "database": "auth_db",
-      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
+      "host": "34.101.136.39",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
       "password": "",
       "database": "auth_db",
-      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
+      "host": "34.101.136.39",
       "dialect": "mysql"
     },
     "production": {
       "username": "root",
       "password": "",
       "database": "auth_db",
-      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
+      "host": "34.101.136.39",
       "dialect": "mysql"
     }
   }
