@@ -3,14 +3,14 @@
       "username": "root",
       "password": "",
       "database": "auth_db",
-      "host": "localhost",
+      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
       "password": "",
       "database": "auth_db",
-      "host": "localhost",
+      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
       "dialect": "mysql"
     },
     "production": {
