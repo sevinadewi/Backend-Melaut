@@ -1,23 +1,23 @@
 {
     "development": {
       "username": "root",
-      "password": "",
+      "password": "password123",
       "database": "auth_db",
-      "host": "34.101.136.39",
+      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
-      "password": "",
+      "password": "password123",
       "database": "auth_db",
-      "host": "34.101.136.39",
+      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
       "dialect": "mysql"
     },
     "production": {
       "username": "root",
-      "password": "",
+      "password": "password123",
       "database": "auth_db",
-      "host": "34.101.136.39",
+      "host": "/cloudsql/bangkitmelaut:asia-southeast2:mysql-instance",
       "dialect": "mysql"
     }
   }
