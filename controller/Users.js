@@ -19,25 +19,10 @@ export const Register = async(req, res) => {
     const {name, phone, password, confPassword} = req.body;
     
     console.log('Request body:', req.body);
-    if(!name){
-        return res.status(400).json({ msg: "name are required" });
-    }else if(!phone){
-        return res.status(400).json({ msg: "phone are required" });
 
-
-    }else if(!password){
-        return res.status(400).json({ msg: "ps are required" });
-
-
-    }else{
-        return res.status(400).json({ msg: "cfps are required" });
-
-
+    if (!name || !phone || !password || !confPassword) {
+        return res.status(400).json({ msg: "All fields are required" });
     }
-
-    // if (!name || !phone || !password || !confPassword) {
-    //     return res.status(400).json({ msg: "All fields are required" });
-    // }
 
     
 
