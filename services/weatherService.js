@@ -3,6 +3,11 @@ import axios from "axios";
 
 
 export async function getCurrentWeather(lat, lon) {
+
+  if (!lat || !lon) {
+    throw new Error("Latitude and Longitude must be provided.");
+  }
+  
   const API_KEY = process.env.API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
