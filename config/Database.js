@@ -30,7 +30,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { Sequelize } from 'sequelize';
-if (!process.env.DB_USER || !process.env.DB_PASS || !process.env.DB_NAME || !process.env.INSTANCE_UNIX_SOCKET) {
+if (!process.env.DB_USER || !process.env.DB_PASS || !process.env.DB_NAME || !process.env.DB_HOST) {
     throw new Error('Environment variables DB_USER, DB_PASS, DB_NAME, or INSTANCE_UNIX_SOCKET are not set.');
   }
 
@@ -42,7 +42,7 @@ const db = new Sequelize(
         host: process.env.DB_HOST,  // Menggunakan socketPath untuk Cloud SQL
         dialect: 'mysql',
         dialectOptions: {
-            //socketPath: process.env.DB_HOST,
+            socketPath: process.env.DB_HOST,
         },
     }
 );
