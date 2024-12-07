@@ -42,7 +42,7 @@ const db = new Sequelize(
         host: process.env.DB_HOST,  // Menggunakan socketPath untuk Cloud SQL
         dialect: 'mysql',
         dialectOptions: {
-            socketPath: process.env.DB_HOST,
+            //socketPath: process.env.DB_HOST,
         },
     }
 );
