@@ -22,6 +22,7 @@ export async function getCurrentWeather(lat, lon) {
       weather: response.data.weather[0].description,
       wind_speed: response.data.wind.speed,
       pressure: response.data.main.pressure,
+      icon: response.data.weather[0].icon,
     };
   } catch (error) {
     console.error("Error fetching current weather:", error.message);
