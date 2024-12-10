@@ -1,19 +1,26 @@
-import axios from "axios";
+// services/mlService.js
+import axios from 'axios'; // Untuk memanggil API Flask
 
-export async function getSafetyPrediction(weatherData) {
-  const url = "http://your-flask-api-url/predict"; // URL Flask API
-  try {
-    const response = await axios.post(url, {
-      temperature: weatherData.temperature,
-      humidity: weatherData.humidity,
-      weather: weatherData.weather,
-      wind_speed: weatherData.wind_speed,
-      pressure: weatherData.pressure,
-    });
+// Service untuk memanggil API Flask dan mendapatkan hasil prediksi cuaca
+export const mlpredictWeather = async (inputData) => {
+    try {
+        // Kirim data cuaca ke API Flask
+        const response = await axios.post('https://ml-melaut-project-276667022964.asia-southeast2.run.app/predict', inputData 
+        );
 
-    return response.data; // Hasil prediksi dari Flask API
-  } catch (error) {
-    console.error("Error fetching safety prediction:", error.message);
-    throw new Error("Unable to fetch safety prediction.");
-  }
-}
+        // Ambil data dari response API
+        const result = response.data;
+
+        // Format hasil yang diterima sesuai dengan yang diinginkan
+        const formattedResult = {
+            input_data: result.input_data,
+            predicted_condition: result.predicted_condition,
+            predicted_rad: result.predicted_rad
+        };
+
+        return formattedResult;
+    } catch (error) {
+        console.error('Error in calling Flask API:', error);
+        throw new Error('Error in calling Flask API');
+    }
+};
