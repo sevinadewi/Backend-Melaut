@@ -56,6 +56,7 @@ app.use(router);
 app.use(postRoutes);
 app.use("/home", homeRoutes); 
 // app.use('/api', ResultRoutes);
+app.use(ResultRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
