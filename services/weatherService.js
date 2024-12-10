@@ -13,6 +13,15 @@ export async function getCurrentWeather(lat, lon) {
 
   try {
     const response = await axios.get(url);
+
+    const weatherArray = response.data.weather;
+    if (!weatherArray || weatherArray.length === 0) {
+      throw new Error("Weather data is missing from API response.");
+    }
+
+    const iconCode = weatherArray[0].icon; // Ambil kode ikon
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; // URL ikon (resolusi 2x)
+
     return {
       location: response.data.name,
       temperature: response.data.main.temp,
@@ -22,7 +31,7 @@ export async function getCurrentWeather(lat, lon) {
       weather: response.data.weather[0].description,
       wind_speed: response.data.wind.speed,
       pressure: response.data.main.pressure,
-      icon: response.data.weather[0].icon,
+      iconUrl, 
     };
   } catch (error) {
     console.error("Error fetching current weather:", error.message);

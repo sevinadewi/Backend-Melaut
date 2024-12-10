@@ -45,12 +45,6 @@ router.get("/", async (req, res) => {
     // const weatherData = await getWeatherByCoordinates(lat, lon);
     const weatherData = await getCurrentWeather(lat, lon);
 
-    const iconCode = weatherData.currentWeather.icon; // Mengambil kode ikon cuaca
-    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`; // URL gambar cuaca
-
-    // Menambahkan iconUrl ke dalam data cuaca
-    weatherData.currentWeather.iconUrl = iconUrl;
-
     res.json(weatherData);
   } catch (error) {
     res.status(500).json({ error: error.message });
