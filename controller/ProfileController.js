@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import Users from "../models/UserModel.js";
 
 const defaultProfilePhoto = "/uploads/default-photo.jpg"; // Path ke foto default
 
